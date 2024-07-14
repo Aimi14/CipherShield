@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "CipherShield",
+    "version": "1.0.0",
+    "description": "Detects File and Link Phishing Extension",
+    "icons": {
+        "128":"icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "action":{
+        "default_icon": "icon48.png",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "activeTab",
+        "downloads",
+        "notifications",
+        "storage",
+        "scripting",
+        "webNavigation" 
+    ],
+    "background": {
+          "service_worker": "service_worker.js"
+    },
+
+    "host_permissions": [
+        "https://*/",
+        "http://*/"
+    ],
+
+   "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src 'self' http://127.0.0.1:5000 https://mail.google.com https://mail-attachment.googleusercontent.com/*; script-src 'self'; object-src 'self'"
+   }
+}

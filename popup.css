@@ -1,0 +1,63 @@
+/* Style for the popup container */
+.popup-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center; /* Vertically center items */
+    width: 90%; /* Maintain this as the base width */
+    max-width: 600px; /* Maximum width to avoid being too wide */
+    min-width: 300px; /* Minimum width to avoid being too narrow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the logo and text */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 35px; /* Logo width */
+    height: 35px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px; /* Adjust size as needed */
+    color: #333; /* Color to match the theme */
+    font-weight: bold; /* Make it bold */
+    vertical-align: middle;
+}
+
+/* Styling for the heading */
+h1 {
+    color: #333;
+    margin: 10px; /* Margin around the heading */
+}
+
+/* Paragraph styling */
+p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px; /* Space before the button */
+}
+
+/* Button styling */
+button {
+    background-color: #e74c3c; /* Red color matching the screenshot */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    align-items: center; /* Vertically center items */
+}
+
+button:hover {
+    background-color: #c0392b; /* Darken button on hover */
+}
