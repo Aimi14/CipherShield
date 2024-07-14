@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='iconbg.gif') }}')">
+    <div class="container1">
+        <h1 class="text-gradient">Analysis Results</h1>
+        <div class="results">
+            <div class="result">
+                <p class="result-label">Suspicious</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ results.suspicious }}%"></div>
+                </div>
+                <p class="result-value">{{ results.suspicious }}%</p>
+            </div>
+            <div class="result">
+                <p class="result-label">Malicious</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ results.malicious }}%"></div>
+                </div>
+                <p class="result-value">{{ results.malicious }}%</p>
+            </div>
+            <div class="result">
+                <p class="result-label">Undetected</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ results.undetected }}%"></div>
+                </div>
+                <p class="result-value">{{ results.undetected }}%</p>
+            </div>
+        </div>
+        
+    {% if is_malicious %}
+        <a href="/" class="button">Go Back to Upload</a>
+    {% elif url %}
+        <a href="{{ url }}" class="button" target="_blank">Open Link Here</a>
+        <a href="/" class="button">Go Back to Upload</a>
+    {% elif file_url %}
+        <a class="result-label" target="_blank">Open File At Your Own Risk!</a>
+        <a href="/" class="button">Go Back to Upload</a>
+    {% endif %}
+    </div>
+</body>
+</html>

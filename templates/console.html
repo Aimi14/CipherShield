@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Process</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='iconbg.gif') }}')">
+    <div class="container2">
+            <img src="{{ url_for('static', filename='icon48.png') }}" alt="CipherShield Logo" class="logo">
+            <h2>CIPHER SHIELD</h2>
+            <p>
+            <img src="{{ url_for('static', filename='iconfile.gif') }}" alt="Scan Icon" class="scan-icon">
+            <h1 class="loading-text">Scanning File...</h1>
+            <p id="scan-status" class="loading-text">Waiting for analysis to complete...</p>
+        </div>
+    </div>
+    <script src="console.js"></script>
+</body>
+</html>

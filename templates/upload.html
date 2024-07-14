@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File and Url Upload</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='iconbg.gif') }}')">
+<div class="container">
+    <header>
+        <img src="{{ url_for('static', filename='icon48.png') }}" alt="Cipher Shield" class="logo">
+        <h1>CIPHER SHIELD</h1>
+    </header>
+    <div class="box">
+        <h2>Enter URL To Check</h2>
+        <form method="POST" action="/scan_url" class="upload-form">
+            <input type="url" name="url" id="url-input" placeholder="Put your link here" class="input-url" required>
+            <p>
+            <input type="submit" value="Scan URL" class="button">
+        </form>
+    </div>
+    <div class="box">
+        <h2>Upload File Here</h2>
+        <p>(pdf, docs, pptx, xlsx)</p>
+        <form method="POST" enctype="multipart/form-data" class="upload-form" action="/">
+            <input type="file" name="file" accept=".pdf, .docx, .xlsx, .pptx" id="file-upload" onchange="displayFileName(this)">
+            <label for="file-upload" class="button">Browse File</label>
+            <input type="submit" value="Scan File" class="button">
+        </form>
+        <p id="file-name">Selected File:</p>
+    </div>
+    {% if analysis_status %}
+    <p class="result-value">{{ analysis_status }}</p>
+    {% endif %}
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+</div>
+<script>
+    function displayFileName(input) {
+        const fileName = input.files[0].name;
+        document.getElementById('file-name').textContent = `Selected file: ${fileName}`;
+    }
+</script>
+</body>
+</html>
